@@ -7,11 +7,13 @@
     max-width: 400px;
     gap: 20px;
     transition: all .1s linear;
+    min-width: 360px;
+    cursor: pointer;
+    margin-bottom: 10px;
 }
 
 .tw-card:hover{
-    cursor: pointer;
-    transform: translateY(-5px);
+    background-color: #282828;
 }
 
 .tw-card-header{
@@ -40,6 +42,7 @@
     border-radius: 100%;
 }
 
+
 .tw-card-button{
     color: #333;
     background-color: white;
@@ -50,9 +53,48 @@
     font-size: 15px;
     font-weight: 700;
     cursor: pointer;
-    transition: all .05s linear;
+    transition: all .1s ease-in-out;
 }
 
 .tw-card-button:active{
     transform: scale(.95);
+}
+
+.tw-card-button.is-following{
+    color: #ffffff;
+    background-color: transparent;
+    box-sizing: border-box;
+    border: 1px solid #bbb;
+    min-width: 104px;
+}
+
+.tw-card-button:hover{
+    background-color: #999999;
+}
+
+
+.tw-card-button.is-following:hover{
+    background-color: transparent;
+    border: 1px solid #852d2d;
+    color: #852d2d;
+    padding: 8px 16px;
+}
+
+.tw-card-button.is-following:hover .tw-card-button-text{
+    display: none;
+}
+
+.tw-card-button.is-following:hover .tw-card-stop-following{
+    display: block;
+}
+
+.tw-card-button.is-following:active{
+    transform: scale(.95);
+}
+
+.tw-card-stop-following{
+    display: none;
+    color: #852d2d;
+    padding: 0;
+    margin: 0;    
 }
