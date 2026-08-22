@@ -1,0 +1,11 @@
+html{
+    background: #0C0F2C;
+    background: linear-gradient(180deg, rgba(12, 15, 44, 1) 0%, rgba(2, 40, 159, 1) 42%, rgba(84, 6, 55, 1) 100%);
+}
+
+.container{
+    min-height: 500px;
+    min-width: 100%;
+    border: 1px solid #ff0000;
+    background-color: transparent;
+}
