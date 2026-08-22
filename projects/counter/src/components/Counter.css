@@ -1,0 +1,80 @@
+.counter-container {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+
+}
+
+button.counter-button {
+    width: 55px;
+    height: 55px;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+
+    color: #fff;
+    font-family: 'Elms Sans';
+    font-size: 28px;
+
+    opacity: 0;
+
+    animation: spawn 1s ease-in-out;
+    animation-delay: 2s;
+    animation-fill-mode: forwards;
+
+    box-shadow:
+        0 4px 15px rgba(80, 20, 60, 0.15),
+        inset 0 1px 1px rgba(255, 255, 255, 0.25);
+
+    transition: all .15s ease-in-out;
+
+    &:hover {
+        transform: translateY(-2px);
+        background: rgba(255, 255, 255, 0.25);
+
+        box-shadow:
+            0 7px 20px rgba(80, 20, 60, 0.2),
+            inset 0 1px 1px rgba(255, 255, 255, 0.35);
+    }
+
+    &:active {
+        transform: scale(0.92);
+    }
+}
+
+.result {
+    width: 150px;
+    font-family: 'JetBrains Mono';
+    text-align: center;
+    font-size: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+
+    animation: spawn 1s ease-in-out;
+    animation-delay: 1.6s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes spawn {
+    0%{
+        opacity: 0;
+        transform: translateY(50px);
+    }
+
+
+    100%{
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}

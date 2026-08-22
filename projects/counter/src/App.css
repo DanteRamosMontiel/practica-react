@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Elms+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+
+.container {
+    height: 100dvh;
+    width: 100dvw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+}
+
+h1.title {
+    font-size: 60px;
+    font-family: 'Elms Sans';
+    font-weight: 800;
+    text-align: center;
+    letter-spacing: -2px;
+    background: linear-gradient(to right, #470627, #5e0d40);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    padding: 0 10px;
+
+    opacity: 0;
+
+    animation: spawn 1s ease-in-out;
+    animation-delay: .5s;
+    animation-fill-mode: forwards;
+}

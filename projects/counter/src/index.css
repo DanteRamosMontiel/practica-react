@@ -1,11 +1,13 @@
-html{
-    background: #0C0F2C;
-    background: linear-gradient(180deg, rgba(12, 15, 44, 1) 0%, rgba(2, 40, 159, 1) 42%, rgba(84, 6, 55, 1) 100%);
+*,
+*::after,
+*::before{
+    padding: 0;
+    margin: 0;
 }
 
-.container{
-    min-height: 500px;
-    min-width: 100%;
-    border: 1px solid #ff0000;
-    background-color: transparent;
+body, html{       
+    background: #03001e;
+    background: -webkit-linear-gradient( to right top,  #d1a5c4,  #ec38bc,  #c77aaf,  #a67aa0 );  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient( to right top,  #d1a5c4,  #ec38bc,  #c77aaf,  #a67aa0 ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    min-height: 100dvh;
 }

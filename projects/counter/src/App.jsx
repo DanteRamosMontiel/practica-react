@@ -1,21 +1,14 @@
 import './App.css'
-import background from "./assets/midnight-horizon.png"
-
+import Counter from "./components/Counter"
 
 function App() {
   return (
-    <>
-      <div className="container"></div>
-      <div className="container"></div>
-      <div className="container"></div>
-      <div className="container"></div>
-      <div className="container"></div>
-      <div className="container"></div>
-      <div className="container"></div>
-      <div className="container"></div>
-      <div className="container"></div>
-      <div className="container"></div>
-    </>
+    <section className='container'>
+        <h1 className="title">
+          Easy and colorful<br />counter
+        </h1>
+        <Counter></Counter>
+    </section>
   )
 }
 
