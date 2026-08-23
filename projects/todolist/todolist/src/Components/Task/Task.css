@@ -1,0 +1,137 @@
+.full-task{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 2px;
+
+    animation: spawn .6s ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+@keyframes spawn {
+    0%{
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.task-core {
+    background: rgba(45, 45, 45, 0.9);
+    padding: 20px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    cursor: pointer;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    flex: 1;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.3),
+        0 0 0 rgba(100, 100, 255, 0);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+
+    &:hover {
+        border-color: rgba(130, 140, 255, 0.45);
+
+        box-shadow:
+            0 12px 30px rgba(0, 0, 0, 0.4),
+            0 0 20px rgba(100, 110, 255, 0.15);
+    }
+}
+
+
+h2.task-title {
+    font-size: 25px;
+    font-family: 'Elms Sans';
+    font-weight: 600; 
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+p.task-desc {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: grey;
+    margin: 0;
+}
+
+.task-options{
+    display: flex;
+    gap: 2px;
+}
+
+.task-edit-button,
+.task-delete-button {
+    width: 50px;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    transition:
+        transform 0.2s ease,
+        filter 0.2s ease,
+        box-shadow 0.2s ease;
+
+    box-sizing: border-box;
+}
+
+.task-edit-button img,
+.task-delete-button img {
+    width: 25px;
+    height: 25px;
+    object-fit: contain;
+
+    transition: transform 0.1s ease;
+}
+
+.task-edit-button {
+    background: #3b82f6;
+    border-radius: 10px 0 0 10px;
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.25);
+}
+
+.task-edit-button:hover {
+    filter: brightness(1.12);
+    box-shadow: 0 6px 18px rgba(59, 130, 246, 0.4);
+}
+
+.task-edit-button:hover img {
+    transform: scale(1.1) rotate(-5deg);
+}
+
+
+.task-delete-button {
+    background: #ef4444;
+    border-radius: 0 10px 10px 0;
+    box-shadow: 0 4px 12px rgba(239, 68, 68, 0.25);
+}
+
+.task-delete-button:hover {
+    filter: brightness(1.12);
+    box-shadow: 0 6px 18px rgba(239, 68, 68, 0.4);
+}
+
+.task-delete-button:hover img {
+    transform: scale(1.1);
+}
+
+.task-edit-button:active,
+.task-delete-button:active {
+    transform: scale(0.94);
+}
