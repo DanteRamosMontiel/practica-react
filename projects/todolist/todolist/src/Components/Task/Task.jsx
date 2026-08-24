@@ -2,7 +2,7 @@ import "./Task.css"
 import pencil from "../../assets/pencil.png";
 import trash from "../../assets/trash.png";
 
-function Task({ title, description }) {
+function Task({ title }) {
     return (
         <>
             <div className="full-task">
@@ -10,9 +10,6 @@ function Task({ title, description }) {
                     <h2 className="task-title">
                         {title}
                     </h2>
-                    <p className="task-desc">
-                        {description}
-                    </p>
                 </div>
                 <div className="task-options">
                     <div className="task-edit-button">
