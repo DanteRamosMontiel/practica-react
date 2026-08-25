@@ -1,13 +1,16 @@
 import { useState } from "react"
 import "./TaskInput.css"
 
+let lastId = 0
+
 function TaskInput({ addTask }) {
     const [value, setValue] = useState("")
 
     function handleClick() {
         if (value.trim() === "") return
         const ttl = value.charAt(0).toUpperCase() + value.slice(1)
-        addTask(ttl)
+        addTask(ttl, lastId + 1)
+        lastId += 1
         setValue("")
     }
 

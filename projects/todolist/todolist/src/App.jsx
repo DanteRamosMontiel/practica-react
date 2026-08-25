@@ -7,8 +7,13 @@ function App() {
 
   const [tasks, setTasks] = useState([])
   
-  const addTask = (title) => {
-    const newTaskList = [...tasks, {title}]
+  const addTask = (title, id) => {
+    const newTaskList = [...tasks, {title: title, id: id}]
+    setTasks(newTaskList)
+  }
+
+  const deleteTask = (id) => {
+    const newTaskList = tasks.filter(task => task.id !== id)
     setTasks(newTaskList)
   }
 
@@ -17,9 +22,9 @@ function App() {
       <h1 className='title'>Task List</h1>
       <div className="tasks-container">
         {
-          tasks.map((t, index) => {
+          tasks.map((t) => {
             return (
-              <Task key={index} title={t.title}></Task>
+              <Task key={t.id} id={t.id} title={t.title} dltFunc={deleteTask}></Task>
             )
           })
         }
