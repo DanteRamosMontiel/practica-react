@@ -6,15 +6,25 @@ import TaskInput from "./Components/TaskInput/TaskInput"
 function App() {
 
   const [tasks, setTasks] = useState([])
-  
+
   const addTask = (title, id) => {
-    const newTaskList = [...tasks, {title: title, id: id}]
+    const newTaskList = [...tasks, { title: title, id: id }]
     setTasks(newTaskList)
   }
 
   const deleteTask = (id) => {
     const newTaskList = tasks.filter(task => task.id !== id)
     setTasks(newTaskList)
+  }
+
+  const editTask = (title, id) => {
+    for (let i = 0; i < tasks.length; i++) {
+      if (tasks[i].id === id) {
+        tasks[i].title = title
+        break
+      }
+    }
+    setTasks([...tasks])
   }
 
   return (
