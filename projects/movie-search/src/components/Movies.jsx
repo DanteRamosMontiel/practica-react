@@ -1,16 +1,16 @@
 function MovieResults({movies}) {
     return (
-        <ul>
+        <div className="movie-results">
             {
                 movies.map(movie => (
-                    <li key={movie.imdbID}>
+                    <div className="movie-block" key={movie.imdbID}>
                         <h3>{movie.title}</h3>
                         <p>{`Year of release: ${movie.year}`}</p>
                         {movie.poster!='N/A' ? <img src={movie.poster} alt={movie.Title} /> : 'No poster reached for this movie'}
-                    </li>
+                    </div>
                 ))
             }
-        </ul>
+        </div>
 
     )
 }
