@@ -20,8 +20,6 @@ body {
 
 .movie-block {
     width: auto;
-    padding: 10px;
-    border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 10px;
     background: rgba(255, 255, 255, 0.05);
     text-align: center;
@@ -29,28 +27,54 @@ body {
     display:flex;
     flex-direction: column;
     justify-content: space-between;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    opacity: 0;
+    animation-fill-mode: forwards;
 }
 
 .movie-block:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    outline: 1px  solid white;
 }
 
 .movie-block img {
     width: 100%;
     height: auto;
-    border-radius: 7px;
+    border-radius: 0px 0px 7px 7px;
     display: block;
 }
 
 .movie-block h3 {
     margin: 12px 0 5px;
     font-size: 18px;
+    padding: 0px 10px;
 }
 
 .movie-block p {
     margin: 0;
     color: rgba(255, 255, 255, 0.6);
     font-size: 14px;
+    padding-bottom: 10px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .movie-block:not([aria-busy=true]) {
+        transition: all 0.1s ease;
+        transition-duration: 0.3s !important;
+        transition-delay: 0s !important;
+        animation: spawn ease-in-out;
+        animation-fill-mode: forwards;
+        animation-duration: 1s !important;
+        animation-delay: calc(sibling-index() * 120ms) !important;
+        animation-iteration-count: 1 !important;
+    }
+}
+
+@keyframes spawn {
+    0%{
+        opacity: 0;
+    }
+
+    100%{
+        opacity: 1;
+    }
 }

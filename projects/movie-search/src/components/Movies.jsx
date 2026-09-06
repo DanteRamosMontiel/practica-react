@@ -1,3 +1,5 @@
+import poster from "../assets/default_movie_poster.png"
+
 function MovieResults({movies}) {
     return (
         <div className="movie-results">
@@ -6,7 +8,7 @@ function MovieResults({movies}) {
                     <div className="movie-block" key={movie.imdbID}>
                         <h3>{movie.title}</h3>
                         <p>{`Year of release: ${movie.year}`}</p>
-                        {movie.poster!='N/A' ? <img src={movie.poster} alt={movie.Title} /> : 'No poster reached for this movie'}
+                        <img src={movie.poster==='N/A' ? poster : movie.poster} alt={movie.Title} />
                     </div>
                 ))
             }
