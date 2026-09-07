@@ -5,7 +5,7 @@ function MovieResults({movies}) {
         <div className="movie-results">
             {
                 movies.map(movie => (
-                    <div className="movie-block" key={movie.imdbID}>
+                    <div className="movie-block" key={movie.id}>
                         <h3>{movie.title}</h3>
                         <p>{`Year of release: ${movie.year}`}</p>
                         <img src={movie.poster==='N/A' ? poster : movie.poster} alt={movie.Title} />
