@@ -5,12 +5,13 @@ import Movie from './components/Movies.jsx'
 
 function App() {
 
-  const mappedMovies = useMovie()
-  const {search, updateSearch, error} = useSearch()
+  const {search, madeFirstSearch, updateSearch, error} = useSearch()
+  const {movies, loading, getMovies} = useMovie({ search })
 
 
   const handleSubmit = (event) => {
     event.preventDefault()
+    getMovies()
   }
 
   const handleChange = (event) => {
@@ -29,7 +30,8 @@ function App() {
       </header>
 
       <main className='container'>
-        <Movie movies={mappedMovies}/>
+        {loading && <span className="loader"></span>}
+        {!loading && madeFirstSearch.current && <Movie movies={movies}/>}
       </main>
     </>
   )
