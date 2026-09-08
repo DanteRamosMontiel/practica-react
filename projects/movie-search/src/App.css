@@ -29,6 +29,13 @@ body {
     justify-content: space-between;
     opacity: 0;
     animation-fill-mode: forwards;
+    transition-duration: 0.3s !important;
+    transition-delay: 0s !important;
+    animation: spawn ease-in-out;
+    animation-fill-mode: forwards;
+    animation-duration: 1s !important;
+    animation-delay: calc(sibling-index() * 120ms) !important;
+    animation-iteration-count: 1 !important;
 }
 
 .movie-block:hover {
